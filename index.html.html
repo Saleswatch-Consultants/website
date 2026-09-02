@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sales Watch Consultants — Export Business Development</title>
+<meta name="description" content="Sales Watch Consultants helps Indian manufacturers plan, launch, and manage their export business — from first buyer to first shipment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0B2036;
+    --blue: #065A82;
+    --teal: #1C7293;
+    --brass: #A8752C;
+    --brass-light: #C99444;
+    --paper: #F5F8FA;
+    --ink: #16222E;
+    --muted: #57697A;
+    --line: #DCE4EA;
+    --white: #FFFFFF;
+    --serif: 'Spectral', Georgia, serif;
+    --sans: 'IBM Plex Sans', -apple-system, Segoe UI, Roboto, sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3{
+    font-family: var(--serif);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--navy);
+  }
+  p{ margin: 0 0 1em; }
+  a{ color: inherit; }
+  img,svg{ max-width:100%; display:block; }
+  .wrap{ max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+  section{ padding: 88px 0; }
+  @media (max-width: 720px){
+    section{ padding: 56px 0; }
+    .wrap{ padding: 0 20px; }
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+    html{ scroll-behavior: auto; }
+  }
+
+  /* ---------- Nav ---------- */
+  header.site{
+    position: sticky; top:0; z-index: 50;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(140%) blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .navbar{
+    max-width:1100px; margin:0 auto; padding: 16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{
+    font-family: var(--serif); font-weight:700; font-size: 19px;
+    color: var(--navy); letter-spacing: 0.2px; text-decoration:none;
+  }
+  .brand span{ color: var(--brass); }
+  nav.links{ display:flex; gap: 32px; }
+  nav.links a{
+    text-decoration:none; color: var(--ink); font-size: 15px; font-weight:500;
+    padding: 6px 0; border-bottom: 2px solid transparent;
+  }
+  nav.links a:hover{ border-bottom-color: var(--brass); }
+  .nav-cta{
+    background: var(--navy); color: var(--white) !important; text-decoration:none;
+    padding: 9px 18px; border-radius: 3px; font-size: 14px; font-weight:600;
+  }
+  .nav-cta:hover{ background: var(--blue); }
+  .burger{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
+  .burger span{ display:block; width:24px; height:2px; background:var(--navy); margin:5px 0; }
+
+  @media (max-width: 780px){
+    nav.links{
+      display:none; position:absolute; top:100%; left:0; right:0;
+      background: var(--white); border-bottom:1px solid var(--line);
+      flex-direction:column; gap:0; padding: 8px 20px 16px;
+    }
+    nav.links.open{ display:flex; }
+    nav.links a{ padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .nav-cta{ margin-top:8px; text-align:center; }
+    .burger{ display:block; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background: var(--navy);
+    color: var(--white);
+    overflow:hidden;
+    padding: 96px 0 84px;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items:center;
+    position:relative; z-index:2;
+  }
+  .hero .kicker{
+    color: #8FD4E8; font-size: 14px; font-weight:600; margin-bottom: 18px;
+    letter-spacing: 0.3px;
+  }
+  .hero h1{
+    color: var(--white); font-size: 46px; line-height:1.15; max-width: 620px;
+  }
+  .hero p.lede{
+    color: #C7D9E2; font-size: 18px; max-width: 520px; margin: 22px 0 32px;
+  }
+  .btn-row{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn{
+    display:inline-block; text-decoration:none; font-weight:600; font-size:15px;
+    padding: 13px 26px; border-radius: 3px; transition: background 0.15s ease, color 0.15s ease;
+  }
+  .btn-primary{ background: var(--brass); color: var(--navy); }
+  .btn-primary:hover{ background: var(--brass-light); }
+  .btn-ghost{ background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.35); }
+  .btn-ghost:hover{ border-color: rgba(255,255,255,0.7); }
+
+  .route-art{ position:relative; }
+  .route-art svg{ width:100%; height:auto; }
+
+  @media (max-width: 900px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .hero h1{ font-size: 34px; }
+    .route-art{ order:-1; max-width: 320px; margin: 0 auto 8px; opacity:0.9; }
+  }
+
+  /* ---------- Trust strip ---------- */
+  .trust-strip{
+    background: var(--blue); color: var(--white);
+    padding: 22px 0;
+  }
+  .trust-strip .wrap{
+    display:flex; flex-wrap:wrap; gap: 14px 36px; justify-content:space-between;
+    font-size: 14.5px; font-weight:500; color:#DCEEF4;
+  }
+  .trust-strip .item{ display:flex; align-items:center; gap:10px; }
+  .trust-strip .dot{ width:6px; height:6px; border-radius:50%; background: var(--brass-light); flex:none; }
+
+  /* ---------- Section headings ---------- */
+  .section-head{ max-width: 640px; margin-bottom: 48px; }
+  .section-head h2{ font-size: 32px; }
+  .section-head p{ color: var(--muted); font-size: 16.5px; margin-top:14px; }
+  @media (max-width:720px){ .section-head h2{ font-size:26px; } }
+
+  /* ---------- Manifest list (What We Do) ---------- */
+  .manifest{ border-top: 1px solid var(--line); }
+  .manifest-row{
+    display:grid; grid-template-columns: 64px 1fr 1.4fr; gap: 24px;
+    padding: 28px 0; border-bottom: 1px solid var(--line); align-items: baseline;
+  }
+  .manifest-row .num{
+    font-family: var(--serif); font-size: 20px; color: var(--brass); font-weight:600;
+  }
+  .manifest-row h3{ font-size: 19px; color: var(--navy); }
+  .manifest-row p{ color: var(--muted); font-size: 15.5px; margin:0; }
+  @media (max-width: 760px){
+    .manifest-row{ grid-template-columns: 40px 1fr; }
+    .manifest-row p{ grid-column: 2 / -1; }
+  }
+
+  .note-card{
+    margin-top: 32px; padding: 20px 24px; background: var(--paper);
+    border-radius: 4px; color: var(--muted); font-size: 15px;
+  }
+  .note-card strong{ color: var(--ink); }
+
+  /* ---------- Why Export (icon grid) ---------- */
+  .why-grid{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap: 36px 28px;
+  }
+  .we-item{ text-align:center; }
+  .we-icon{
+    width: 64px; height:64px; margin: 0 auto 16px;
+    border: 1.5px solid var(--brass); border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    color: var(--brass);
+  }
+  .we-icon svg{ width: 30px; height:30px; }
+  .we-item h3{ font-size: 16px; }
+  @media (max-width: 780px){
+    .why-grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px){
+    .why-grid{ grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  /* ---------- Approach (principles) ---------- */
+  .approach{ background: var(--paper); }
+  #approach{ padding-bottom: 40px; }
+  .principle-grid{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .principle{
+    padding: 26px 28px 26px 0;
+    border-right: 1px solid var(--line);
+  }
+  .principle:last-child{ border-right:none; padding-right:0; }
+  .principle:not(:first-child){ padding-left: 28px; }
+  .principle h3{ font-size: 18px; margin:0; }
+  @media (max-width: 820px){
+    .principle-grid{ grid-template-columns: 1fr; }
+    .principle{ border-right:none; border-bottom: 1px solid var(--line); padding: 22px 0 !important; }
+    .principle:last-child{ border-bottom:none; }
+  }
+
+  /* ---------- Process ---------- */
+  .process{
+    display:grid; grid-template-columns: repeat(4, 1fr); gap: 28px;
+  }
+  .process .step{ border-top: 3px solid var(--brass); padding-top: 18px; }
+  .process .step .num{ font-family: var(--serif); font-size: 26px; color: var(--teal); font-weight:600; }
+  .process .step h3{ font-size: 17px; margin: 10px 0 8px; }
+  .process .step p{ font-size: 14.5px; color: var(--muted); margin:0; }
+  @media (max-width: 860px){
+    .process{ grid-template-columns: 1fr 1fr; row-gap: 32px; }
+  }
+  @media (max-width: 480px){
+    .process{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- CTA ---------- */
+  .cta{
+    background: var(--navy); color: var(--white); text-align: left;
+  }
+  .cta-grid{
+    display:flex; justify-content:space-between; align-items:center; gap: 40px; flex-wrap:wrap;
+  }
+  .cta h2{ color: var(--white); font-size: 30px; max-width: 480px; }
+  .cta p{ color: #C7D9E2; margin-top:12px; max-width: 460px; }
+  .cta-actions{ display:flex; flex-direction:column; gap: 12px; min-width: 220px; }
+  .contact-line{ font-size: 14.5px; color: #C7D9E2; }
+  .contact-line strong{ color: var(--white); font-weight:600; }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background: var(--navy); border-top: 1px solid rgba(255,255,255,0.12);
+    color: #8FA6B8; padding: 24px 0;
+  }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="navbar">
+    <a href="#top" class="brand">Sales Watch <span>Consultants</span></a>
+    <button class="burger" aria-label="Toggle menu" aria-expanded="false" onclick="var n=document.getElementById('navlinks'); var open=n.classList.toggle('open'); this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="links" id="navlinks">
+      <a href="#why-export">Why Export</a>
+      <a href="#what-we-do">What We Do</a>
+      <a href="#approach">Our Approach</a>
+      <a href="#process">How We Work</a>
+      <a href="#contact" class="nav-cta">Get in Touch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker">Discover your Exports Potential</div>
+        <h1>We help Indian Companies become Global</h1>
+        <p class="lede">Your Hands-On Export Growth Partner — From Finding Your First Overseas Customer to Building a Multi-Country Export Business</p>
+        <div class="btn-row">
+          <a href="#contact" class="btn btn-primary">Start a Conversation</a>
+          <a href="#what-we-do" class="btn btn-ghost">See What We Do</a>
+        </div>
+      </div>
+      <div class="route-art" aria-hidden="true">
+        <svg viewBox="0 0 360 320" fill="none">
+          <path d="M40 250 Q 120 80 190 140 T 320 60" stroke="#3E7994" stroke-width="1.5" stroke-dasharray="2 7" stroke-linecap="round"/>
+          <path d="M40 250 Q 150 260 190 140" stroke="#3E7994" stroke-width="1.5" stroke-dasharray="2 7" stroke-linecap="round"/>
+          <circle cx="40" cy="250" r="5" fill="#C99444"/>
+          <circle cx="190" cy="140" r="5" fill="#8FD4E8"/>
+          <circle cx="320" cy="60" r="5" fill="#8FD4E8"/>
+          <circle cx="120" cy="235" r="4" fill="#8FD4E8" opacity="0.7"/>
+          <rect x="24" y="262" width="32" height="20" rx="2" fill="none" stroke="#C99444" stroke-width="1.4"/>
+          <line x1="24" y1="269" x2="56" y2="269" stroke="#C99444" stroke-width="1"/>
+          <line x1="35" y1="262" x2="35" y2="282" stroke="#C99444" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="wrap">
+      <div class="item"><span class="dot"></span>Global Market Expertise</div>
+      <div class="item"><span class="dot"></span>Dynamic Sales Strategies</div>
+      <div class="item"><span class="dot"></span>Full-cycle, end-to-end support</div>
+      <div class="item"><span class="dot"></span>Built exclusively for MSME manufacturers</div>
+    </div>
+  </div>
+
+  <!-- WHY EXPORT -->
+  <section id="why-export">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Why Export?</h2>
+        <p>Six reasons manufacturers are choosing to grow beyond the domestic market.</p>
+      </div>
+      <div class="why-grid">
+        <div class="we-item">
+          <div class="we-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="8" y="30" width="6" height="10"/>
+              <rect x="21" y="22" width="6" height="18"/>
+              <rect x="34" y="12" width="6" height="28"/>
+              <path d="M8 18 L20 10 L28 15 L40 6"/>
+              <path d="M33 6 H40 V13"/>
+            </svg>
+          </div>
+          <h3>Revenue Growth</h3>
+        </div>
+        <div class="we-item">
+          <div class="we-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="36" x2="36" y2="12"/>
+              <circle cx="15" cy="15" r="4"/>
+              <circle cx="33" cy="33" r="4"/>
+            </svg>
+          </div>
+          <h3>Higher Profitability</h3>
+        </div>
+        <div class="we-item">
+          <div class="we-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="24" cy="11" r="4"/>
+              <circle cx="10" cy="37" r="4"/>
+              <circle cx="24" cy="37" r="4"/>
+              <circle cx="38" cy="37" r="4"/>
+              <path d="M24 15 L10 33 M24 15 L24 33 M24 15 L38 33"/>
+            </svg>
+          </div>
+          <h3>Market Diversification</h3>
+        </div>
+        <div class="we-item">
+          <div class="we-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="8" y="6" width="20" height="26" rx="1.5"/>
+              <line x1="13" y1="13" x2="23" y2="13"/>
+              <line x1="13" y1="18" x2="23" y2="18"/>
+              <circle cx="32" cy="28" r="7"/>
+              <path d="M28 34 L26 41 L32 38 L38 41 L36 34"/>
+            </svg>
+          </div>
+          <h3>Government Export Benefits</h3>
+        </div>
+        <div class="we-item">
+          <div class="we-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 18 L24 8 L40 18"/>
+              <line x1="8" y1="18" x2="40" y2="18"/>
+              <line x1="12" y1="18" x2="12" y2="34"/>
+              <line x1="20" y1="18" x2="20" y2="34"/>
+              <line x1="28" y1="18" x2="28" y2="34"/>
+              <line x1="36" y1="18" x2="36" y2="34"/>
+              <line x1="6" y1="34" x2="42" y2="34"/>
+              <line x1="6" y1="40" x2="42" y2="40"/>
+            </svg>
+          </div>
+          <h3>Financial Strength</h3>
+        </div>
+        <div class="we-item">
+          <div class="we-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="14" y1="6" x2="14" y2="42"/>
+              <path d="M14 8 Q24 4 34 10 Q26 14 34 18 Q24 22 14 18 Z"/>
+            </svg>
+          </div>
+          <h3>Global Brand &amp; National Pride</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section id="what-we-do">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What we do for your business</h2>
+        <p>We take on the parts of exporting that most manufacturers have never had to do before — end to end, so you can stay focused on your factory floor.</p>
+      </div>
+
+      <div class="manifest">
+        <div class="manifest-row">
+          <div class="num">01</div>
+          <h3>Market Research &amp; Buyer Prospecting</h3>
+          <p>Identifying the right export markets and the overseas buyers most likely to want what you make.</p>
+        </div>
+        <div class="manifest-row">
+          <div class="num">02</div>
+          <h3>Value Proposition &amp; Positioning</h3>
+          <p>Framing your product and your factory in a way that speaks directly to an international buyer's concerns.</p>
+        </div>
+        <div class="manifest-row">
+          <div class="num">03</div>
+          <h3>Negotiation &amp; Order Closing</h3>
+          <p>Handling buyer conversations, objections, and terms — all the way through to a confirmed order.</p>
+        </div>
+        <div class="manifest-row">
+          <div class="num">04</div>
+          <h3>Documentation &amp; Logistics Coordination</h3>
+          <p>Coordinating with CHAs and shipping liners, and managing the paperwork that comes with a first shipment.</p>
+        </div>
+        <div class="manifest-row">
+          <div class="num">05</div>
+          <h3>Government Scheme Guidance</h3>
+          <p>Helping you understand what you're eligible for — including GST zero-rating and RoDTEP — before your CA files it.</p>
+        </div>
+      </div>
+
+      <div class="note-card">
+        <strong>What we never touch:</strong> your product pricing. That decision — and the relationship with your production — stays entirely with you.
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section id="approach" class="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How we work is different</h2>
+        <p>Most manufacturers we meet have been pitched exports before. Here's what we do differently.</p>
+      </div>
+      <div class="principle-grid">
+        <div class="principle">
+          <h3>Transparent by design</h3>
+        </div>
+        <div class="principle">
+          <h3>Accountability you can see</h3>
+        </div>
+        <div class="principle">
+          <h3>Your business stays protected</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How we work together</h2>
+        <p>A simple, predictable rhythm from the first conversation onward.</p>
+      </div>
+      <div class="process">
+        <div class="step">
+          <div class="num">01</div>
+          <h3>Understand your business</h3>
+          <p>We learn your product, your capacity, and what a good buyer looks like for you.</p>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <h3>Build your pipeline</h3>
+          <p>We research markets, identify buyers, and start real conversations on your behalf.</p>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <h3>Negotiate &amp; close</h3>
+          <p>We carry conversations through to a confirmed order — with you in the loop throughout.</p>
+        </div>
+        <div class="step">
+          <div class="num">04</div>
+          <h3>Report &amp; refine</h3>
+          <p>Weekly updates and a monthly review keep the whole process visible and on track.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="wrap cta-grid">
+      <div>
+        <h2>Let's discover the export potential of your business.</h2>
+        <p>A short conversation is all it takes to assess the opportunity — fast, simple and hassle-free.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="mailto:hello@salewatchconsultants.example" class="btn btn-primary">Email Us</a>
+        <a href="tel:+910000000000" class="btn btn-ghost">Call Us</a>
+        <div class="contact-line"><strong>Sales Watch Consultants</strong><br>Delhi NCR, India</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> Sales Watch Consultants</span>
+    <span>Export Business Development Consultants</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
