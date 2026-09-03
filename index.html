@@ -205,23 +205,6 @@
 
   /* ---------- Approach (principles) ---------- */
   .approach{ background: var(--paper); }
-  #approach{ padding-bottom: 40px; }
-  .principle-grid{
-    display:grid; grid-template-columns: repeat(3, 1fr); gap: 0;
-    border-top: 1px solid var(--line);
-  }
-  .principle{
-    padding: 26px 28px 26px 0;
-    border-right: 1px solid var(--line);
-  }
-  .principle:last-child{ border-right:none; padding-right:0; }
-  .principle:not(:first-child){ padding-left: 28px; }
-  .principle h3{ font-size: 18px; margin:0; }
-  @media (max-width: 820px){
-    .principle-grid{ grid-template-columns: 1fr; }
-    .principle{ border-right:none; border-bottom: 1px solid var(--line); padding: 22px 0 !important; }
-    .principle:last-child{ border-bottom:none; }
-  }
 
   /* ---------- Process ---------- */
   .process{
@@ -250,6 +233,31 @@
   .cta-actions{ display:flex; flex-direction:column; gap: 12px; min-width: 220px; }
   .contact-line{ font-size: 14.5px; color: #C7D9E2; }
   .contact-line strong{ color: var(--white); font-weight:600; }
+
+  /* ---------- Contact Details (letterhead) ---------- */
+  #contact-details{ padding-top: 0; padding-bottom: 72px; }
+  .letterhead{
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--brass);
+    padding: 40px 44px;
+  }
+  .letterhead-top h2{ font-size: 22px; }
+  .letterhead-top p{ color: var(--muted); font-size: 14px; margin: 6px 0 0; }
+  .letterhead-grid{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    margin-top: 30px; padding-top: 28px; border-top: 1px solid var(--line);
+  }
+  .letterhead-grid h3{
+    font-family: var(--sans); font-size: 12.5px; font-weight:600; color: var(--brass);
+    text-transform: uppercase; letter-spacing: 0.6px; margin: 0 0 8px;
+  }
+  .letterhead-grid p{ font-size: 15px; color: var(--ink); margin:0 0 4px; }
+  .letterhead-grid a{ color: var(--blue); text-decoration:none; }
+  .letterhead-grid a:hover{ text-decoration:underline; }
+  @media (max-width: 720px){
+    .letterhead{ padding: 30px 24px; }
+    .letterhead-grid{ grid-template-columns: 1fr; gap: 20px; }
+  }
 
   /* ---------- Footer ---------- */
   footer{
@@ -446,17 +454,37 @@
     <div class="wrap">
       <div class="section-head">
         <h2>How we work is different</h2>
-        <p>Most manufacturers we meet have been pitched exports before. Here's what we do differently.</p>
+        <p>Most manufacturers we meet have been pitched exports before. Here's what actually sets our engagement apart.</p>
       </div>
-      <div class="principle-grid">
-        <div class="principle">
-          <h3>Transparent by design</h3>
+      <div class="why-grid">
+        <div class="we-item">
+          <div class="we-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 24C9 14 17 9 24 9s15 5 20 15c-5 10-13 15-20 15S9 34 4 24Z"/>
+              <circle cx="24" cy="24" r="6"/>
+            </svg>
+          </div>
+          <h3>Transparent by Design</h3>
         </div>
-        <div class="principle">
-          <h3>Accountability you can see</h3>
+        <div class="we-item">
+          <div class="we-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="10" y="7" width="28" height="34" rx="2"/>
+              <path d="M16 17 L19 20 L26 13"/>
+              <line x1="16" y1="27" x2="32" y2="27"/>
+              <line x1="16" y1="33" x2="32" y2="33"/>
+            </svg>
+          </div>
+          <h3>Accountability You Can See</h3>
         </div>
-        <div class="principle">
-          <h3>Your business stays protected</h3>
+        <div class="we-item">
+          <div class="we-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M24 6 L38 12 V22 C38 32 32 39 24 42 C16 39 10 32 10 22 V12 Z"/>
+              <path d="M18 24 L22 28 L30 19"/>
+            </svg>
+          </div>
+          <h3>Your Business Stays Protected</h3>
         </div>
       </div>
     </div>
@@ -502,9 +530,36 @@
         <p>A short conversation is all it takes to assess the opportunity — fast, simple and hassle-free.</p>
       </div>
       <div class="cta-actions">
-        <a href="mailto:hello@salewatchconsultants.example" class="btn btn-primary">Email Us</a>
-        <a href="tel:+910000000000" class="btn btn-ghost">Call Us</a>
-        <div class="contact-line"><strong>Sales Watch Consultants</strong><br>Delhi NCR, India</div>
+        <a href="mailto:director@saleswatch.in" class="btn btn-primary">Email Us</a>
+        <a href="tel:+917827074728" class="btn btn-ghost">Call Us</a>
+        <div class="contact-line"><strong>Sales Watch Consultants</strong><br>Rohini, Delhi</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT DETAILS -->
+  <section id="contact-details">
+    <div class="wrap">
+      <div class="letterhead">
+        <div class="letterhead-top">
+          <h2>Sales Watch Consultants</h2>
+          <p>We help Indian companies become global</p>
+        </div>
+        <div class="letterhead-grid">
+          <div>
+            <h3>Virtual Offices</h3>
+            <p>Delhi &bull; Bangalore &bull; Pune</p>
+          </div>
+          <div>
+            <h3>Regional Office</h3>
+            <p>Rohini, Delhi &ndash; 110086</p>
+          </div>
+          <div>
+            <h3>Reach Us</h3>
+            <p><a href="mailto:director@saleswatch.in">director@saleswatch.in</a></p>
+            <p><a href="tel:+917827074728">+91 78270 74728</a></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -514,7 +569,7 @@
 <footer>
   <div class="wrap">
     <span>© <span id="year"></span> Sales Watch Consultants</span>
-    <span>Export Business Development Consultants</span>
+    <span> We help Indian companies become Global </span>
   </div>
 </footer>
 
