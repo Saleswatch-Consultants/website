@@ -45,9 +45,9 @@
   a{ color: inherit; }
   img,svg{ max-width:100%; display:block; }
   .wrap{ max-width: 1100px; margin: 0 auto; padding: 0 28px; }
-  section{ padding: 88px 0; }
+  section{ padding: 64px 0; }
   @media (max-width: 720px){
-    section{ padding: 56px 0; }
+    section{ padding: 44px 0; }
     .wrap{ padding: 0 20px; }
   }
 
@@ -108,7 +108,7 @@
     background: var(--navy);
     color: var(--white);
     overflow:hidden;
-    padding: 96px 0 84px;
+    padding: 72px 0 64px;
   }
   .hero-grid{
     display:grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items:center;
@@ -124,6 +124,7 @@
   .hero p.lede{
     color: #C7D9E2; font-size: 18px; max-width: 520px; margin: 22px 0 32px;
   }
+  .hero p.lede strong{ color: var(--white); font-weight:600; }
   .btn-row{ display:flex; gap:16px; flex-wrap:wrap; }
   .btn{
     display:inline-block; text-decoration:none; font-weight:600; font-size:15px;
@@ -131,8 +132,10 @@
   }
   .btn-primary{ background: var(--brass); color: var(--navy); }
   .btn-primary:hover{ background: var(--brass-light); }
-  .btn-ghost{ background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.35); }
-  .btn-ghost:hover{ border-color: rgba(255,255,255,0.7); }
+  .hero-credentials{
+    margin: 18px 0 0; color: #9FC3D4; font-size: 13px; font-weight:500;
+    letter-spacing: 0.3px; text-transform: uppercase;
+  }
 
   .route-art{ position:relative; }
   .route-art svg{ width:100%; height:auto; }
@@ -146,11 +149,11 @@
   /* ---------- Trust strip ---------- */
   .trust-strip{
     background: var(--blue); color: var(--white);
-    padding: 22px 0;
+    padding: 20px 0;
   }
   .trust-strip .wrap{
-    display:flex; flex-wrap:wrap; gap: 14px 36px; justify-content:space-between;
-    font-size: 14.5px; font-weight:500; color:#DCEEF4;
+    display:flex; flex-wrap:wrap; gap: 12px 32px; justify-content:space-between;
+    font-size: 14px; font-weight:500; color:#DCEEF4;
   }
   .trust-strip .item{ display:flex; align-items:center; gap:10px; }
   .trust-strip .dot{ width:6px; height:6px; border-radius:50%; background: var(--brass-light); flex:none; }
@@ -203,24 +206,39 @@
     .why-grid{ grid-template-columns: 1fr; gap: 28px; }
   }
 
-  /* ---------- Approach (principles) ---------- */
-  .approach{ background: var(--paper); }
-
-  /* ---------- Process ---------- */
-  .process{
-    display:grid; grid-template-columns: repeat(4, 1fr); gap: 28px;
+  /* ---------- Industries carousel ---------- */
+  .industries{ background: var(--paper); }
+  .carousel{ display:flex; align-items:center; gap: 12px; }
+  .carousel-track{
+    flex: 1; display:flex; gap: 20px; overflow-x:auto; scroll-snap-type: x mandatory;
+    padding: 4px 4px 18px; scrollbar-width: none; -ms-overflow-style: none;
   }
-  .process .step{ border-top: 3px solid var(--brass); padding-top: 18px; }
-  .process .step .num{ font-family: var(--serif); font-size: 26px; color: var(--teal); font-weight:600; }
-  .process .step h3{ font-size: 17px; margin: 10px 0 8px; }
-  .process .step p{ font-size: 14.5px; color: var(--muted); margin:0; }
-  @media (max-width: 860px){
-    .process{ grid-template-columns: 1fr 1fr; row-gap: 32px; }
+  .carousel-track::-webkit-scrollbar{ display:none; }
+  .industry-card{
+    scroll-snap-align: start; flex: 0 0 168px;
+    background: var(--white); border: 1px solid var(--line); border-radius: 4px;
+    padding: 26px 16px; text-align:center;
   }
-  @media (max-width: 480px){
-    .process{ grid-template-columns: 1fr; }
+  .industry-icon{
+    width: 52px; height:52px; margin: 0 auto 14px;
+    border: 1.5px solid var(--brass); border-radius: 50%;
+    display:flex; align-items:center; justify-content:center; color: var(--brass);
   }
-
+  .industry-icon svg{ width: 26px; height:26px; }
+  .industry-card h3{ font-size: 14px; line-height:1.35; color: var(--navy); }
+  .carousel-btn{
+    flex: none; width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid var(--line); background: var(--white); color: var(--navy);
+    font-size: 20px; line-height:1; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .carousel-btn:hover{ background: var(--paper); border-color: var(--brass); }
+  @media (max-width: 720px){
+    .carousel{ gap: 6px; }
+    .industry-card{ flex-basis: 148px; padding: 20px 12px; }
+    .carousel-btn{ width: 32px; height: 32px; font-size: 17px; }
+  }
 
   /* ---------- Our Presence ---------- */
   .presence{ background: var(--white); }
@@ -282,7 +300,6 @@
     .presence-legend{ gap:18px; }
   }
 
-
   .presence-map-image{ display:block; width:100%; height:auto; border:0; }
 
   /* ---------- CTA ---------- */
@@ -342,9 +359,9 @@
     <nav class="links" id="navlinks">
       <a href="#why-exports">Why Exports</a>
       <a href="#what-we-do">What We Do</a>
-      <a href="#approach">Our Approach</a>
+      <a href="#categories">Industries</a>
       <a href="#presence">Our Presence</a>
-      <a href="#contact" class="nav-cta">Get in Touch</a>
+      <a href="tel:+917827074728" class="nav-cta">Contact</a>
     </nav>
   </div>
 </header>
@@ -355,14 +372,13 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="kicker">Discover your Exports Potential</div>
-        <h1>We help Indian Companies become Global</h1>
-        <p class="lede">Your Hands-On Exports Growth Partner — From Finding Your First Overseas Customer to Building a Multi-Country Export Business</p>
+        <div class="kicker">Discover Your Export Potential</div>
+        <h1>We work as International Business Division of your company</h1>
+        <p class="lede"><br>With Sales Watch Consultants, Indian manufacturers build overseas markets without having to create an export sales team from scratch.</p>
         <div class="btn-row">
-          <a href="#contact" class="btn btn-primary">Start a Conversation</a>
-          <a href="#what-we-do" class="btn btn-ghost">See What We Do</a>
+          <a href="tel:+917827074728" class="btn btn-primary">Call Us</a>
         </div>
-      </div>
+        </div>
       <div class="route-art" aria-hidden="true">
         <svg viewBox="0 0 420 340" fill="none">
           <!-- distant ship on horizon -->
@@ -442,10 +458,9 @@
   <!-- TRUST STRIP -->
   <div class="trust-strip">
     <div class="wrap">
-      <div class="item"><span class="dot"></span>Global Market Expertise</div>
-      <div class="item"><span class="dot"></span>Dynamic Sales Strategies</div>
-      <div class="item"><span class="dot"></span>Full-cycle, end-to-end support</div>
-      <div class="item"><span class="dot"></span>Built exclusively for MSME manufacturers</div>
+      <div class="item"><span class="dot"></span>15+ Years in International Business</div>
+      <div class="item"><span class="dot"></span>Registered with Indian Exports Federation</div>
+      <div class="item"><span class="dot"></span>Worldwide Market Access</div>
     </div>
   </div>
 
@@ -535,8 +550,8 @@
   <section id="what-we-do">
     <div class="wrap">
       <div class="section-head">
-        <h2>What we do for your business</h2>
-        <p>We take on the parts of exporting that most manufacturers have never had to do before — end to end, so you can stay focused on your factory floor.</p>
+        <h2>What We Do</h2>
+        <p>You focus on your factory. We handle the complete process of international sales development for you</p>
       </div>
 
       <div class="manifest">
@@ -557,59 +572,147 @@
         </div>
         <div class="manifest-row">
           <div class="num">04</div>
-          <h3>Documentation &amp; Logistics Coordination</h3>
-          <p>Coordinating with CHAs and shipping liners, and managing the paperwork that comes with a first shipment.</p>
-        </div>
-        <div class="manifest-row">
-          <div class="num">05</div>
-          <h3>Government Scheme Guidance</h3>
-          <p>Helping you understand what you're eligible for — including GST zero-rating and RoDTEP — before your CA files it.</p>
+          <h3>Documentation &amp; Logistics</h3>
+          <p>Coordinating between your assigned staff and CHA and Shipping liners for smooth transaction.</p>
         </div>
       </div>
 
       <div class="note-card">
-        <strong>What we never touch:</strong> your product pricing. That decision — and the relationship with your production — stays entirely with you.
+        <strong>What we never touch:</strong> your product pricing. That decision — and the process control— stays entirely with you.
       </div>
     </div>
   </section>
 
-  <!-- OUR APPROACH -->
-  <section id="approach" class="approach">
+  <!-- PRODUCT CATEGORIES -->
+  <section id="industries" class="industries">
     <div class="wrap">
       <div class="section-head">
-        <h2>How we work is different</h2>
-        <p>Most manufacturers we meet have been pitched exports before. Here's what actually sets our engagement apart.</p>
+        <h2>Product Categories We Work With</h2>
+        <p>We support Indian manufacturers across a wide range of engineering and industrial product categories.</p>
       </div>
-      <div class="why-grid">
-        <div class="we-item">
-          <div class="we-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 24C9 14 17 9 24 9s15 5 20 15c-5 10-13 15-20 15S9 34 4 24Z"/>
-              <circle cx="24" cy="24" r="6"/>
-            </svg>
+      <div class="carousel">
+        <button class="carousel-btn carousel-prev" aria-label="Scroll left" onclick="document.getElementById('industryTrack').scrollBy({left:-260,behavior:'smooth'})">&#8249;</button>
+        <div class="carousel-track" id="industryTrack" role="list">
+          <div class="industry-card" role="listitem">
+            <div class="industry-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="24" cy="24" r="9"/>
+                <path d="M24 6v6M24 36v6M42 24h-6M12 24H6M36.5 11.5l-4.2 4.2M15.7 32.3l-4.2 4.2M36.5 36.5l-4.2-4.2M15.7 15.7l-4.2-4.2"/>
+              </svg>
+            </div>
+            <h3>Engineering &amp; Industrial Products</h3>
           </div>
-          <h3>Transparent by Design</h3>
-        </div>
-        <div class="we-item">
-          <div class="we-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="10" y="7" width="28" height="34" rx="2"/>
-              <path d="M16 17 L19 20 L26 13"/>
-              <line x1="16" y1="27" x2="32" y2="27"/>
-              <line x1="16" y1="33" x2="32" y2="33"/>
-            </svg>
+          <div class="industry-card" role="listitem">
+            <div class="industry-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 30 L9 20 Q10 17 14 17 H34 Q38 17 39 20 L42 30"/>
+                <path d="M4 30 H44 V34 H4 Z"/>
+                <circle cx="14" cy="34" r="4"/>
+                <circle cx="34" cy="34" r="4"/>
+              </svg>
+            </div>
+            <h3>Auto Components</h3>
           </div>
-          <h3>Accountability You Can See</h3>
-        </div>
-        <div class="we-item">
-          <div class="we-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M24 6 L38 12 V22 C38 32 32 39 24 42 C16 39 10 32 10 22 V12 Z"/>
-              <path d="M18 24 L22 28 L30 19"/>
-            </svg>
+          <div class="industry-card" role="listitem">
+            <div class="industry-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 42 V22"/>
+                <path d="M24 22 C24 14 16 10 10 10 C10 18 16 22 24 22Z"/>
+                <path d="M24 26 C24 18 32 14 38 14 C38 22 32 26 24 26Z"/>
+              </svg>
+            </div>
+            <h3>Agricultural Machinery &amp; Implements</h3>
           </div>
-          <h3>Your Business Stays Protected</h3>
+          <div class="industry-card" role="listitem">
+            <div class="industry-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M26 4 L12 26 H22 L20 44 L38 20 H27 Z"/>
+              </svg>
+            </div>
+            <h3>Electrical &amp; Electrical Components</h3>
+          </div>
+          <div class="industry-card" role="listitem">
+            <div class="industry-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 6 L38 14 V32 L24 40 L10 32 V14 Z"/>
+                <circle cx="24" cy="23" r="6"/>
+              </svg>
+            </div>
+            <h3>Machine Parts</h3>
+          </div>
+          <div class="industry-card" role="listitem">
+            <div class="industry-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 8 H38 M10 40 H38 M24 8 V40"/>
+                <path d="M10 8 V14 M38 8 V14 M10 34 V40 M38 34 V40"/>
+              </svg>
+            </div>
+            <h3>Fabricated Products</h3>
+          </div>
+          <div class="industry-card" role="listitem">
+            <div class="industry-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 38 L28 20"/>
+                <path d="M30 18 a6 6 0 108-8 6 6 0 00-8 8z"/>
+                <path d="M8 40 a4 4 0 108-8 4 4 0 00-8 8z"/>
+              </svg>
+            </div>
+            <h3>Tools &amp; Hardware</h3>
+          </div>
+          <div class="industry-card" role="listitem">
+            <div class="industry-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 40 V22 L18 28 V22 L30 28 V16 L42 22 V40 Z"/>
+                <path d="M6 40 H42"/>
+                <path d="M34 16 V10 M34 10 H38 M38 10 V14"/>
+              </svg>
+            </div>
+            <h3>Industrial Equipment</h3>
+          </div>
+          <div class="industry-card" role="listitem">
+            <div class="industry-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 6 L42 15 V33 L24 42 L6 33 V15 Z"/>
+                <path d="M6 15 L24 24 L42 15"/>
+                <path d="M24 24 V42"/>
+              </svg>
+            </div>
+            <h3>Packaging Machinery</h3>
+          </div>
+          <div class="industry-card" role="listitem">
+            <div class="industry-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 42 V14 L34 6 V16"/>
+                <path d="M8 20 H30 V42"/>
+                <path d="M30 20 L36 26 V32"/>
+                <path d="M4 42 H44"/>
+              </svg>
+            </div>
+            <h3>Construction-Related Products</h3>
+          </div>
+          <div class="industry-card" role="listitem">
+            <div class="industry-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 8 L42 16 L24 24 L6 16 Z"/>
+                <path d="M6 24 L24 32 L42 24"/>
+                <path d="M6 32 L24 40 L42 32"/>
+              </svg>
+            </div>
+            <h3>Plastic &amp; Metal Products</h3>
+          </div>
+          <div class="industry-card" role="listitem">
+            <div class="industry-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="24" cy="24" r="16"/>
+                <circle cx="24" cy="24" r="8"/>
+                <circle cx="24" cy="24" r="1.6" fill="currentColor" stroke="none"/>
+                <path d="M24 4 V10 M24 38 V44 M4 24 H10 M38 24 H44"/>
+              </svg>
+            </div>
+            <h3>Specialised B2B Manufactured Products</h3>
+          </div>
         </div>
+        <button class="carousel-btn carousel-next" aria-label="Scroll right" onclick="document.getElementById('industryTrack').scrollBy({left:260,behavior:'smooth'})">&#8250;</button>
       </div>
     </div>
   </section>
